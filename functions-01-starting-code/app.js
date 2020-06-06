@@ -49,14 +49,14 @@ const getWinner = (cChoice, pChoice) => {
 		: RESULT_COMPUTER_WINS;
 };
 
-const getWinner = (cChoice, pChoice) =>
-	cChoice === pChoice
-		? RESULT_DRAW
-		: (cChoice === ROCK && pChoice === PAPER) ||
-		  (cChoice === PAPER && pChoice === SCISSORS) ||
-		  (cChoice === SCISSORS && pChoice === ROCK)
-		? RESULT_PLAYER_WINS
-		: RESULT_COMPUTER_WINS;
+// const getWinner = (cChoice, pChoice) =>
+// 	cChoice === pChoice
+// 		? RESULT_DRAW
+// 		: (cChoice === ROCK && pChoice === PAPER) ||
+// 		  (cChoice === PAPER && pChoice === SCISSORS) ||
+// 		  (cChoice === SCISSORS && pChoice === ROCK)
+// 		? RESULT_PLAYER_WINS
+// 		: RESULT_COMPUTER_WINS;
 
 // declare a function using logic to determine the winner of the game
 // const getWinner = function(cChoice, pChoice) {
@@ -84,4 +84,14 @@ startGameBtn.addEventListener('click', () => {
 	const computerChoice = getComputerChoice();
 	const winner = getWinner(computerChoice, playerChoice);
 	console.log(winner);
+	let message = `You picked ${playerChoice}, computer picked ${computerChoice}, therefore you `;
+	if (winner === RESULT_DRAW) {
+		message = message + 'had a draw.';
+	} else if (winner === RESULT_PLAYER_WINS) {
+		message = message + 'won.';
+	} else {
+		message = message + 'lost.';
+	}
+	alert(message);
+	gameIsRunning = false;
 });
