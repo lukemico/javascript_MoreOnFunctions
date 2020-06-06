@@ -74,7 +74,7 @@ const getWinner = (cChoice, pChoice) =>
 // };
 
 // declare an anonymous function that listens for a click event and returns outputs using variables below
-startGameBtn.addEventListener('click', function () {
+startGameBtn.addEventListener('click', () => {
 	if (gameIsRunning) {
 		return;
 	}
