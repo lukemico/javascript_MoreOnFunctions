@@ -92,6 +92,7 @@ startGameBtn.addEventListener('click', () => {
 	} else {
 		message = message + 'lost.';
 	}
+	// declare an alert message to the user/ player about the result of the game.
 	alert(message);
 	gameIsRunning = false;
 });
