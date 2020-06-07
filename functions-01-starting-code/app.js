@@ -39,15 +39,36 @@ const getComputerChoice = function () {
 };
 
 // declare an Arrow function + ternary expression logic to determine the winner of the game
-const getWinner = (cChoice, pChoice) => {
-	return cChoice === pChoice
+const getWinner = (cChoice, pChoice = DEFAULT_USER_CHOICE) =>
+	cChoice === pChoice
 		? RESULT_DRAW
 		: (cChoice === ROCK && pChoice === PAPER) ||
 		  (cChoice === PAPER && pChoice === SCISSORS) ||
 		  (cChoice === SCISSORS && pChoice === ROCK)
 		? RESULT_PLAYER_WINS
 		: RESULT_COMPUTER_WINS;
-};
+
+// if (cChoice === pChoice) {
+//   return RESULT_DRAW;
+// } else if (
+//   (cChoice === ROCK && pChoice === PAPER) ||
+//   (cChoice === PAPER && pChoice === SCISSORS) ||
+//   (cChoice === SCISSORS && pChoice === ROCK)
+// ) {
+//   return RESULT_PLAYER_WINS;
+// } else {
+//   return RESULT_COMPUTER_WINS;
+// }
+
+// const getWinner = (cChoice, pChoice) => {
+// 	return cChoice === pChoice
+// 		? RESULT_DRAW
+// 		: (cChoice === ROCK && pChoice === PAPER) ||
+// 		  (cChoice === PAPER && pChoice === SCISSORS) ||
+// 		  (cChoice === SCISSORS && pChoice === ROCK)
+// 		? RESULT_PLAYER_WINS
+// 		: RESULT_COMPUTER_WINS;
+// };
 
 // const getWinner = (cChoice, pChoice) =>
 // 	cChoice === pChoice
