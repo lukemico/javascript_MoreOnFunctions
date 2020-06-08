@@ -21,7 +21,7 @@ const getPlayerChoice = function () {
 	).toUpperCase();
 	if (selection !== ROCK && selection !== PAPER && selection !== SCISSORS) {
 		alert(`Invalid choice! We chose ${DEFAULT_USER_CHOICE} for you!`);
-		return DEFAULT_USER_CHOICE;
+		return;
 	}
 	return selection;
 };
